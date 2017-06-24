@@ -4,9 +4,9 @@ opgave_ark_info = {
     "basedir" : '/Users/rgjg/Google Drev/kode/opgavegenerator',
     "ext" : 'testP',
 
-    "elev fornavn" : "Tabitta",
-    "elev efternavn" : "Tusindfryd",
+    "elevnavn" : "Tabitta",
     "klasse" : '4f',
+    'excelfile' : "/input/cvstest.xlsx",
 
     "opgavetyper" : ['Førstegradsligninger','Andengradsligninger','Reducer'],
     "antal opgaver" : [2,2,2],

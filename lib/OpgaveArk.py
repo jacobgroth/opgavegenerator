@@ -13,7 +13,7 @@ class opgave_ark:
         self.opgavedokument = []
         self.loesningsdokument = []
         self.start , self.slut = dok_generator(self.oai['titel'],
-                                               str( self.oai['elev fornavn'] + ' ' + self.oai['elev efternavn']),
+                                               str( self.oai['elevnavn'] ),
                                                str(self.oai['klasse'] ) )
 
 
@@ -43,7 +43,8 @@ class opgave_ark:
         self.skriv_tekst_til_texdokument(self.slut)
 
         if self.oai['debug'] == False:
-            outputfil = filIO(opgave_ark_info,self.texdokument)
+            outputfil = filIO(opgave_ark_info, self.texdokument)
+            outputfil.hentCVSfilfraLectio()
             outputfil.skrivtilfil()
             outputfil.kompile()
             outputfil.rydop()

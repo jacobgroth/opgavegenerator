@@ -1,4 +1,5 @@
 from OpgaveArkInfo import *
+from pandas import ExcelFile
 import os,sys
 
 class filIO:
@@ -17,7 +18,7 @@ class filIO:
 
         if os.path.exists(outputdir) == False:
             os.makedirs(outputdir)
-        return outputdir, outputdir + '/' + self.opgave_ark_info['elev fornavn'] + '_'  + self.opgave_ark_info['elev efternavn'] + '.tex'
+        return outputdir, outputdir + '/' + self.opgave_ark_info['elevnavn'].replace(' ','_') + '.tex'
 
     def skrivtilfil(self):
         with open(self.hentfilenavn()[1], "w") as text_file:
@@ -28,9 +29,14 @@ class filIO:
         self.outputdir = self.hentfilenavn()[0].replace('Google Drev','Google\ Drev')
         os.system("pdflatex -output-directory {} {}".format(self.outputdir,filnavn))
 
-
     def rydop(self):
         os.system("rm {}/*aux".format(self.outputdir))
         os.system("rm {}/*log".format(self.outputdir))
+
+    def hentCVSfilfraLectio(self):
+        xl = ExcelFile(self.opgave_ark_info['basedir']+self.opgave_ark_info['excelfile'])
+        df = xl.parse("cvstest.csv")
+        return df["Elev\nNavn"].dropna().tolist()
+
 
 

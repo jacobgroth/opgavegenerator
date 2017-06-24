@@ -28,7 +28,7 @@ def gen_koef(n, exclude=["x", "X"], first_nonzero=True, var_coeffs=False,
         for i in exclude:
             selection.remove(i)
     else:
-        selection = digits_nozero
+        selection = cifre_nozero
     coeffs = []
     for i in iter(range(n)):
         c = random.choice(selection)
@@ -40,6 +40,25 @@ def gen_koef(n, exclude=["x", "X"], first_nonzero=True, var_coeffs=False,
     if first_nonzero and coeffs[0] == 0:
         coeffs[0] = random.choice(selection)
     return coeffs
+
+
+def poly1(x):
+    vals = sum([k*x**i for i,k in enumerate(reversed(gen_koef(2)))])
+    return vals
+
+def poly2(x):
+    vals = sum([k*x**i for i,k in enumerate(reversed(gen_koef(3)))])
+    return vals
+
+def poly3(x):
+    vals = sum([k*x**i for i,k in enumerate(reversed(gen_koef(4)))])
+    return vals
+
+
+_funktioner = [sympy.sin, sympy.cos, sympy.tan, sympy.ln, sympy.sqrt, sympy.exp,
+              lambda a: a, poly1, poly2, poly3]
+
+_polynomier= [lambda a: a, poly1, poly2, poly3]
 
 
 def gengiv(udtryk, lhs=""):
