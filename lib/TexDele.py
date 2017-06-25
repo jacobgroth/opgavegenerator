@@ -6,9 +6,9 @@ def texdoc_startogslut(titel,elevnavn,klasse):
     \\usepackage[utf8]{inputenc}
     \\usepackage[danish]{babel}
     \\usepackage[T1]{fontenc}
-    \\printanswers
+    \\noprintanswers
     \\addpoints 
-    \\qformat{\\textbf{Spørgsmål \\\\ \\thequestion}\\quad(\\thepoints)\\hfill}
+    \\qformat{\\textbf{Spørgsmål \\quad \\\\ \\thequestion}\\quad(\\thepoints)\\hfill}
     \\usepackage{color}
     \\definecolor{SolutionColor}{rgb}{0.8,0.9,1} 
     \\shadedsolutions 

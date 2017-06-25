@@ -44,11 +44,18 @@ class opgave_ark:
 
         if self.oai['debug'] == False:
             outputfil = filIO(opgave_ark_info, self.texdokument)
-            outputfil.hentCVSfilfraLectio()
+
             outputfil.skrivtilfil()
             outputfil.kompile()
             outputfil.rydop()
+
+            if self.oai['lav loesning'] == True:
+                outputfil.skrivtilfil(sol=True)
+                outputfil.kompile(sol=True)
+                outputfil.rydop()
+
         else:
             print(''.join(self.texdokument))
+
 
         return True

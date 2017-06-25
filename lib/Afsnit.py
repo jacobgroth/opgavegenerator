@@ -3,7 +3,6 @@ from lib.TexDele import afsnit_tex
 from lib.tekst import afsnittekstdict
 
 
-
 class afsnit:
 
     def __init__(self,opgavetype,antalopgaver,lavloesning=True):

@@ -4,11 +4,13 @@ from lib.OpgaveArk import *
 from lib.TexDele import texdoc_startogslut
 
 cvsfil = filIO(oai,'')
-elevnavne = cvsfil.hentCVSfilfraLectio()
+elevinfo = cvsfil.hentCVSfilfraLectio()
 
-for elev in elevnavne:
+for ei in elevinfo:
 
-    oai['elevnavn'] = elev
+    oai['elevnavn'] = ei[0]
+    oai['sværhedgrad'] = ei[1]
+
     opgavedokument = opgave_ark(oai["lav loesning"], texdoc_startogslut)
 
     for opgtype,antalopg in zip(oai["opgavetyper"],oai["antal opgaver"]):

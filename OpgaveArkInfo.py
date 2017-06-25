@@ -4,12 +4,13 @@ opgave_ark_info = {
     "basedir" : '/Users/rgjg/Google Drev/kode/opgavegenerator',
     "ext" : 'testP',
 
-    "elevnavn" : "Tabitta",
+    "elevnavn" : "Tabitta Tusindfryd",
     "klasse" : '4f',
     'excelfile' : "/input/cvstest.xlsx",
 
-    "opgavetyper" : ['Førstegradsligninger','Andengradsligninger','Reducer'],
-    "antal opgaver" : [2,2,2],
+    "opgavetyper" : ['Find ubestemt integral'],
+    "antal opgaver" : [2],
+    "sværhedgrad" : 2,
     "lav loesning" : True,
     "debug" : False
 

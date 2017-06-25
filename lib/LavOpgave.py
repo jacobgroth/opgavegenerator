@@ -1,12 +1,17 @@
 from lib.TexDele import opgave_tex
 from lib.ligninger import opg_linear_ligning,opg_andengradsligning,opg_redurcer
+from lib.differentialregning import opg_find_afledet
+from lib.integralregning import opg_find_ubestemt_integral
 from lib.tekst import opgavetekstdict
+from OpgaveArkInfo import opgave_ark_info as oai
 
 _opgave_dict = {
 
     "Førstegradsligninger": opg_linear_ligning,
     "Andengradsligninger" : opg_andengradsligning,
-    "Reducer": opg_redurcer
+    "Reducer": opg_redurcer,
+    "Find afledet funktion" : opg_find_afledet,
+    "Find ubestemt integral": opg_find_ubestemt_integral
 
 }
 
@@ -27,6 +32,7 @@ class opgave:
         instruktion = self.opgavetekstdict[self.opgavetype][0]
         args = self.opgavetekstdict[self.opgavetype][1]
         kwargs = self.opgavetekstdict[self.opgavetype][2]
+        kwargs['sg'] = oai['sværhedgrad']
 
         if hasattr(self.opgavetype, '__call__'):
             opg_generator = self.opgavetype
