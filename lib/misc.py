@@ -22,13 +22,16 @@ def shuffle(x):
     return x
 
 def gen_koef(n, exclude=["x", "X"], first_nonzero=True, var_coeffs=False,
-                        reduce=True):
+                        reduce=False,sg=2):
+
+    koef = cifre_for_sg(sg)
+
     if var_coeffs:
-        selection = copy(cifre_nozero + var)
+        selection = copy(koef + var)
         for i in exclude:
             selection.remove(i)
     else:
-        selection = cifre_nozero
+        selection = koef
     coeffs = []
     for i in iter(range(n)):
         c = random.choice(selection)
@@ -54,11 +57,24 @@ def poly3(x):
     vals = sum([k*x**i for i,k in enumerate(reversed(gen_koef(4)))])
     return vals
 
+def kvad1(x):
+    a,b = gen_koef(2)
+    return (x + a)**2
 
-_funktioner = [sympy.sin, sympy.cos, sympy.tan, sympy.ln, sympy.sqrt, sympy.exp,
-              lambda a: a, poly1, poly2, poly3]
+def kvad2(x):
+    a,b = gen_koef(2)
+    return (x - a) ** 2
+
+def kvad3(x):
+    a,b = gen_koef(2)
+    return (x + a)*(x+b)
+
+
+_funktioner = [sympy.ln, sympy.sqrt, sympy.exp, lambda a: a, poly1, poly2, poly3, sympy.sin, sympy.cos, sympy.tan]
 
 _polynomier= [lambda a: a, poly1, poly2, poly3]
+
+_kvadratur = [kvad1,kvad2,kvad3]
 
 
 def gengiv(udtryk, lhs=""):
@@ -67,3 +83,29 @@ def gengiv(udtryk, lhs=""):
     if lhs:
         venstre = "$$%s =" % lhs
     return ''.join([venstre, sympy.latex(udtryk), "$$"])
+
+def cifre_for_sg(sg=2):
+
+    returnlist = []
+    if sg == 1:
+        returnlist = list(range(-5, 5))
+
+    elif sg == 2:
+        returnlist = list(range(-10, 10))
+
+    else:
+        returnlist = list(range(-15, 15))
+
+    returnlist.remove(0)
+
+    return returnlist
+
+def andengrads_nulloes(sg=2):
+
+    a,b,c = gen_koef(3,sg)
+
+    while b**2 >= 4*a*c:
+        a,b,c = gen_koef(3,sg)
+
+    else:
+        return a,b,c

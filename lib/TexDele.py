@@ -70,3 +70,4 @@ def opgave_tex(instruktioner, problem, loesning, point=1):
     \\end{solution}
     """ % (str(point), instruktioner, problem, loesning)
     return code
+

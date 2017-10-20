@@ -1,16 +1,36 @@
 opgave_ark_info = {
 
-    "titel" : 'Prøve uden hjælpemidler',
+    "titel" : 'Prøve med lommeregner og formelsamling',
     "basedir" : '/Users/rgjg/Google Drev/kode/opgavegenerator',
-    "ext" : 'testP',
+    "ext" : 'testCase',
 
     "elevnavn" : "Tabitta Tusindfryd",
-    "klasse" : '4f',
+    "klasse" : '2f',
     'excelfile' : "/input/cvstest.xlsx",
+    'niveau' : 'B',
+    'MC' : False,
+    "opgavetyper" : [
 
-    "opgavetyper" : ['Find ubestemt integral'],
-    "antal opgaver" : [2],
-    "sværhedgrad" : 2,
+#       'Førstegradsligninger',
+#        'Andengradsligninger',
+#        'Reducer',
+#        'Find afledet funktion',
+        'Find tangent',
+#        'Find ubestemt integral',
+        'Vækstformer'
+
+        ],
+
+    "antal opgaver" : [
+#        2,
+#        2,
+#        2,
+        '2MC',
+        '2MC',
+#        2
+    ],
+
+    "sværhedsgrad" : 1,
     "lav loesning" : True,
     "debug" : False
 

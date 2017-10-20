@@ -55,7 +55,8 @@ class opgave_ark:
                 outputfil.rydop()
 
         else:
-            print(''.join(self.texdokument))
+            #print(''.join(self.texdokument))
+            print('HEP')
 
 
         return True
