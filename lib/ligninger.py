@@ -3,7 +3,7 @@ import sympy
 import random
 from lib.misc import var,gen_koef,gengiv,cifre_nozero,_polynomier,cifre_for_sg, andengrads_nulloes, _kvadratur
 
-def opg_linear_ligning(x="", rhs = None, var_coeffs=True, sg=2 , niv ='B'):
+def opg_linear_ligning(x="", rhs = None, var_coeffs=True, sg=2 , niv ='B', MC = False):
 
     if not x:
         x = random.choice(var)
@@ -19,7 +19,7 @@ def opg_linear_ligning(x="", rhs = None, var_coeffs=True, sg=2 , niv ='B'):
     return "Løs for $%s$ : %s" % (x, gengiv(e)), loes
 
 
-def opg_andengradsligning(uafvar="x", rhs = None, introed=True,sg=2, niv = 'B'):
+def opg_andengradsligning(uafvar="x", rhs = None, introed=True,sg=2, niv = 'B',MC = False):
 
 
 
@@ -63,7 +63,7 @@ def opg_andengradsligning(uafvar="x", rhs = None, introed=True,sg=2, niv = 'B'):
 
 
 
-def opg_redurcer(uafvar='x',sg=2, niv = 'B'):
+def opg_redurcer(uafvar='x',sg=2, niv = 'B',MC = False):
     if isinstance(uafvar, str):
         uafvar = sympy.Symbol(uafvar)
     elif isinstance(uafvar, list):

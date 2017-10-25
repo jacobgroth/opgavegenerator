@@ -28,8 +28,8 @@ def gen_koef(n, exclude=["x", "X"], first_nonzero=True, var_coeffs=False,
 
     if var_coeffs:
         selection = copy(koef + var)
-        for i in exclude:
-            selection.remove(i)
+#        for i in exclude:
+#            selection.remove(i)
     else:
         selection = koef
     coeffs = []

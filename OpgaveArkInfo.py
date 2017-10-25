@@ -1,33 +1,34 @@
 opgave_ark_info = {
 
-    "titel" : 'Prøve med lommeregner og formelsamling',
-    "basedir" : '/Users/rgjg/Google Drev/kode/opgavegenerator',
+    "titel" : 'Opgaver med lommeregner og formelsamling',
+    "basedir" : '/home/jacob/skole/opgavegenerator',
     "ext" : 'testCase',
 
     "elevnavn" : "Tabitta Tusindfryd",
-    "klasse" : '2f',
+    "klasse" : '3u - RGs smukkeste klasse' ,
     'excelfile' : "/input/cvstest.xlsx",
-    'niveau' : 'B',
+    'niveau' : 'A',
     'MC' : False,
     "opgavetyper" : [
 
-#       'Førstegradsligninger',
-#        'Andengradsligninger',
-#        'Reducer',
-#        'Find afledet funktion',
+       'Førstegradsligninger',
+        'Andengradsligninger',
+        'Reducer',
+        'Find afledet funktion',
         'Find tangent',
-#        'Find ubestemt integral',
+        'Find ubestemt integral',
         'Vækstformer'
 
         ],
 
     "antal opgaver" : [
-#        2,
-#        2,
-#        2,
+        2,
+        2,
+        2,
         '2MC',
         '2MC',
-#        2
+        2,
+        '2MC'
     ],
 
     "sværhedsgrad" : 1,

@@ -9,7 +9,7 @@ from lib.MC import tilfoejMCspg
 def opg_topunktformel(uafvar="x",sg=2, niv = 'B', MC = False):
 
     #_vaekstformer = [opg_topunktformel_linear,opg_topunktformel_eksponential,opg_topunktformel_potens]
-    _vaekstformer = [opg_topunktformel_linear]
+    _vaekstformer = [opg_topunktformel_linear,opg_topunktformel_eksponential]
 
     funk = random.choice(_vaekstformer)
 
